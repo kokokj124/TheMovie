@@ -1,7 +1,7 @@
 import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useAppSelector, useAppDispatch } from 'app/hook'
-import { actionRequestPage, MovieInfor } from './slice';
+import { actionRequestPage, MovieInfor, ActionRefeshData} from './slice';
 import CardsMovie from 'components/cards/Movie';
 
 const Page = () => {
@@ -11,7 +11,7 @@ const Page = () => {
   const [refreshing, setRefreshing] = React.useState(false);
 
 
-  useEffect(() => {    
+  useEffect(() => {        
     dispath(actionRequestPage(numberPage));
   }, [numberPage])
 
@@ -21,7 +21,12 @@ const Page = () => {
 
 
   const fetchData = () => {
-    setNumberPage(numberPage);
+    let action: ActionRefeshData = {
+      type: "REFESH_DATA",
+      payload: {},
+    }
+    dispath(action);
+    setNumberPage(numberPage + 1);  
     setRefreshing(false);
   };
   

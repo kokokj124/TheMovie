@@ -3,8 +3,22 @@ import { useDispatch } from 'react-redux'
 export const actionDataPages = createAction<PageInfor>('actionDataPages')
 export const actionRequestPage = createAction<number>('actionRequestPage')
 
-interface RejectedAction extends Action {
-  error: Error
+export interface ActionRefeshData extends Action {
+  payload: {
+    //details action
+  }
+}
+function isRefeshAction(action: AnyAction): action is ActionRefeshData {
+  switch(action.type){
+    case "REFESH_DATA":
+    case "DELETE_DATA":
+    case "ADD_DATA":{
+      return true;
+    }
+    default:{
+      return false;
+    }
+  }
 }
 
 interface PageInfor{
@@ -47,6 +61,9 @@ export const pageSlice = createSlice({
       })
       .addCase(actionRequestPage, (state) => {
         state.loading = true;        
+      })
+      .addMatcher(isRefeshAction, (state, action) => {        
+        state.data.results = [];
       })
       // and provide a default case if no other handlers matched
       .addDefaultCase((state, action) => {})
