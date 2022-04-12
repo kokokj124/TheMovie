@@ -26,13 +26,6 @@ export interface MovieInfor{
 const initialState: PageInfor = {
     page: 0,
     results: [
-      {
-        id: 0,
-        poster_path: "",
-        title: "",
-        vote_average: 0,
-        vote_count: 0,
-      }
     ],
     total_pages: 0,
     total_results: 0,
@@ -46,7 +39,9 @@ export const pageSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(actionDataPages, (state, action) => {
+          let arrResult = state.data.results.concat(action.payload.results);
           state.data = action.payload;
+          state.data.results = arrResult;
           state.loading = false;
         // action is inferred correctly here if using TS
       })
