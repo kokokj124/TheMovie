@@ -53,10 +53,10 @@ export const pageSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(actionDataPages, (state, action) => {
-          let arrResult = state.data.results.concat(action.payload.results);
-          state.data = action.payload;
-          state.data.results = arrResult;
-          state.loading = false;
+        let arrResult = state.data.results.concat(action.payload.results);
+        state.data = action.payload;
+        state.data.results = arrResult;
+        state.loading = false;
         // action is inferred correctly here if using TS
       })
       .addCase(actionRequestPage, (state) => {

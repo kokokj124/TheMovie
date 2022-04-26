@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>back_Icon</title>
+    <g id="English" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.5-Moives-Now-lsit" transform="translate(-17.000000, -54.000000)">
+            <g id="back_Icon" transform="translate(17.000000, 54.000000)">
+                <path d="M9.70523878,16.2052388 C9.31574616,15.8157462 9.31424414,15.1857559 9.70523878,14.7947612 L18.7947612,5.70523878 C19.1842538,5.31574616 19.8321756,5.31324913 20.2206454,5.67958494 L20.5021673,5.94506643 C20.9001687,6.32039083 20.9116528,6.94052973 20.5221339,7.33595549 L12.4800428,15.5 L20.5221339,23.6190439 C20.9091081,24.0097209 20.9068223,24.6333863 20.5021673,25.0264758 L20.2206454,25.2999514 C19.8226439,25.6865776 19.1857559,25.6857559 18.7947612,25.2947612 L9.70523878,16.2052388 Z" id="Back-Chevron" fill="#222222"></path>
+                <rect id="Rectangle-10" fill="#FFFFFF" opacity="0" x="0" y="0" width="30" height="30"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
